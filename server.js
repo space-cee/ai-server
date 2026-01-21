@@ -39,10 +39,6 @@ app.post('/chat', async (req, res) => {
 });
 
 
-
-app.listen(port, () => {
-  console.log(`AI server running on port ${port}`);
-});
 app.get("/test", async (req, res) => {
   const message = req.query.message || "Say hello";
   try {
@@ -58,3 +54,9 @@ app.get("/test", async (req, res) => {
     res.status(500).json({ error: err.response?.data || "Failed" });
   }
 });
+
+
+app.listen(port, () => {
+  console.log(`AI server running on port ${port}`);
+});
+
