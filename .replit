@@ -1,0 +1,23 @@
+modules = ["nodejs-20"]
+[nix]
+channel = "stable-25_05"
+packages = ["unzip"]
+
+[agent]
+expertMode = true
+run = "node server.js"
+
+[workflows]
+
+[[workflows.workflow]]
+name = "roblox-ai"
+mode = "sequential"
+author = 35753524
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node server.js"
+
+[[ports]]
+localPort = 3000
+externalPort = 80
